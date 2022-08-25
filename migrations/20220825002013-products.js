@@ -21,6 +21,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      images_show: {
+        type: Sequelize.ARRAY(Sequelize.STRING),
+        allowNull: true,
+      },
+      text_alt: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       category: {
         type: Sequelize.STRING,
         allowNull: false
