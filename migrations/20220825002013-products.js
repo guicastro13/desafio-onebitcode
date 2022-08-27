@@ -17,10 +17,6 @@ module.exports = {
         type: Sequelize.DECIMAL,
         allowNull: false
       },
-      image: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
       images_show: {
         type: Sequelize.ARRAY(Sequelize.STRING),
         allowNull: true,
@@ -30,6 +26,10 @@ module.exports = {
         allowNull: false
       },
       category: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      genger: {
         type: Sequelize.STRING,
         allowNull: false
       },
