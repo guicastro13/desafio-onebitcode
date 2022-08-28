@@ -2,18 +2,24 @@ const Products = require('../models/Products');
 
 module.exports = {
     async store(req, res){
-        const { name, value, image, images_show, text_alt, category, description } = req.body;
-        const product = await Products.create({ name, value, image, images_show, text_alt, category, description });
+        const { name, value, images_show, text_alt, category, genger, description } = req.body;
+        const product = await Products.create({ name, value, images_show, text_alt, category, genger, description });
         return res.json(product);
     },
     async index(req, res){
         const products = await Products.findAll();
         return res.json(products);
     },
+    async search(req, res){
+        const id  = req.params.id
+        console.log(id)
+        const product = await Products.findByPk(id)
+        return res.json(product)
+    },
     async put(req, res){
-        const { name, value } = req.body;
+        const { name, value, images_show, text_alt, category, genger, description } = req.body;
         await Products.update(
-            { name, value },
+            { name, value, images_show, text_alt,category, genger, description },
             { where:{
                 id: req.params.id
             }}
