@@ -30,7 +30,8 @@ module.exports = {
         await Products.destroy({
             where: {
                 id: req.params.id
-            }
+            } 
+            
         })
         return res.send('Product sucessfully deleted!')
     }
